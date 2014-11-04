@@ -28,13 +28,13 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>1.개요</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>1. 개요</h3>
 
 <p>지킬(Jekyll)</p>
 <p>템플릿 디렉토리에서 다양한 포맷의 원본 텍스트 파일을 읽은 후, Markdown (또는 Textile) 과 Liquid 변환 작업을 수행하여, 모든 웹 서버에 곧바로 게시할 수 있는 완성된 정적 웹사이트를 만들어 낸다. Jekyll 은 GitHub Pages 의 내부 엔진으로 사용되고 있습니다. Jekyll을 사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub에 무료로 호스팅 할 수 있다.</p>
 <embed src="./video/introduction.mp4" width="600" height="400" align="middle">
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>2.Jekyll 설치</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>2. Jekyll 설치</h3>
 Step 1: Rvm 설치
 <pre><code>sudo apt-get install curl
 curl -sSL https://get.rvm.io | bash -s stable
@@ -66,7 +66,7 @@ jekyll server
 <pre>깜짝 퀴즈!
 </pre>
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>3.Github 가입 및 Repository 생성</h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>3. Github 가입 및 Repository 생성</h3>
  Step 1: 설치
  <p>맥 OS X에는 루비가 이미 설치되어 있으므로 터미널에서 <code>ruby -v</code>를 입력하여 루비 버전을 체크한 후 다음 명령으로 지킬을 설치한다. </p>
  <pre><code>sudo gem install jekyll</code></pre>
@@ -104,7 +104,7 @@ git commit -m "Initialize blog"
 git push origin gh-pages  // 반드시 gh-pages 브랜치로 푸시해야 깃허브가 블로그 페이지를 만들어 준다.
 </code></pre>
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>4.계정주소 페이지 만들기</h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>4. 계정주소 페이지 만들기</h3>
 Step 1: 프로젝트 폴더 생성
 <pre><code>jekyll new 폴더이름
 cd 폴더이름
@@ -130,7 +130,13 @@ git commit -m "부가 설명을 위한tag"
 여기서 -m은 커밋할 때 어떤 내용인지 메시지를 입력하는 옵션이다.
 <p>로컬에서 만든 저장소에 추가</p>
 <pre><code>git push origin master</code></pre>
-아이디와 비밀번호를 차례로 입력 후 완료.
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>5.만족도 평가</h3>
+<input type="radio" name="evaluation" checked="checked">매우 만족
+ <input type="radio" name="evaluation">만 족
+ <input type="radio" name="evaluation">보 통
+ <input type="radio" name="evaluation">불 만족
+ <input type="radio" name="evaluation">매우 불만족
+ <button>등록</button>
         </section>
 
         <aside id="sidebar">
@@ -143,13 +149,9 @@ git commit -m "부가 설명을 위한tag"
           
         </aside>
       </div>
- <input type="radio" name="evaluation" checked="checked">매우 만족
- <input type="radio" name="evaluation">만 족
- <input type="radio" name="evaluation">보 통
- <input type="radio" name="evaluation">불 만족
- <input type="radio" name="evaluation">매우 불만족
+ 
 <br>
- <textarea rows="5px" cols="5px"></textarea><button>평가완료</button>
+ <textarea>평가 내용을 입력하세요.</textarea><button>평가완료</button>
     </div>
   </body>
 </html>
