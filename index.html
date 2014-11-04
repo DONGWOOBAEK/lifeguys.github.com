@@ -18,7 +18,7 @@
 
   <body>
     <header>
-      <div class="inner">
+      <div class="inner" style="width: 400px">
         <h1>Jekyll를 이용한 Github에 블로그 생성</h1>
         <h2>Middle Project lifeguys</h2>
       </div>
@@ -36,25 +36,73 @@
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>2.Jekyll 설치</h3>
 Step 1: Rvm 설치
 <pre><code>sudo apt-get install curl
-curl -sSL https://get.rvm.io | bash -s stable</code></pre>
+curl -sSL https://get.rvm.io | bash -s stable
+</code></pre>
 Step 2: RVM환경 설정
-<pre><code>source /home/계정명/.rvm/scrips/rvm</code></pre>
+<pre><code>source /home/계정명/.rvm/scrips/rvm
+</code></pre>
 Step 3: 가장 최근 버전의 ruby설치
 <pre><code>rvm requirements
 rvm install 2.1.2
 </code></pre>
 Step 4: 기본 버전 설정
-<pre><code>rvm use 2.1.2 --defalut</code></pre>
+<pre><code>rvm use 2.1.2 --defalut
+</code></pre>
 Step 5: nodejs 설치
-<pre><code>sudo apt-get install nodejs</code></pre>
+<pre><code>sudo apt-get install nodejs
+</code></pre>
 Step 6: Jekyll 설치
+<pre><code>gem install jekyll
+jekyll -v
+</code></pre>
+Step 7: 블로그 만든뒤 서버에 등록
 <pre><code>jekyll new 블로그이름
-cd /블로그이름</code></pre>
+cd /블로그이름
+jekyll server
+</code></pre>
+사이트링크 : http://sharadchhetri.com/2014/06/30/install-jekyll-on-ubuntu-14-04-lts/
+
+<pre>깜짝 퀴즈!
+</pre>
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Github 가입 및 Repository 생성</h3>
+ Step 1: 설치
+ <p>맥 OS X에는 루비가 이미 설치되어 있으므로 터미널에서 <code>ruby -v</code>를 입력하여 루비 버전을 체크한 후 다음 명령으로 지킬을 설치한다. </p>
+ <pre><code>sudo gem install jekyll</code></pre>
+ [sudo]가 필요한 경우엔 []없이 sudo gem install jekyll을 입력한다. 만약, RubyGems 버전과 관련한 에러가 나면 sudo gem update --system으로 업데이트한 후 설치하면 대부분 해결할 수 있다.
+ <br>
+ 이제 로컬 디렉토리에 지킬을 설치하고 온라인 깃허브에 자신의 블로그를 올릴 차례이다. 이 블로그 주소와 같이 nolboo.github.io 계정주소로 생성하는 경우와 nolboo.github.io/blog처럼 프로젝트 페이지 주소로 생성하는 경우가 있다. 전자의 경우가 훨씬 사용하기 쉽다.
+ <br>
+ Step 2: 계정 주소 페이지
+ <pre><code>jekyll new 깃허브사용자명.github.com // 깃허브사용자명.github.com 
+ 디렉토리를 만들어 기본 디렉토리와 화일을 생성한다.</code></pre>
+ 깃허브사용자명.github.com으로 만들면 별도의 비용없이도 자신의 블로그 주소를 가질 수 있다. 자신의 경우에 맞게 깃허브사용명을 입력한다.
+ <pre><code>cd 깃허브사용자명.github.com
+jekyll serve --watch</code></pre>
+이제 웹브라우저 주소창에 localhost:4000을 입력하면 내 컴퓨터(로컬)에서 디폴트 페이지로 생성된 지킬 사이트를 볼 수 있다.
+<img alt="github localhost" src="">
+깃허브에서 깃허브사용자명.github.com이란 이름으로 새로운 온라인 저장소를 만든다. 
+<pre><code>git init
+git remote add origin 저장소URL
+git add .
+git commit -m "Initialize blog"
+git push origin master
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
+Step 3: 프로젝트 주소 페이지
+<pre><code>jekyll new blog // blog 디렉토리를 만들어 기본 디렉토리와 화일을 생성한다.
+cd blog
+jekyll serve --watch
+</code></pre>
+<pre><code>git init
+git checkout --orphan gh-pages
+</code></pre>
+깃허브에 blog란 이름으로 새 저장소를 만들고(로컬 디렉토리와 같은 이름으로 만드는 것이 나중에 기억하거나 유지보수하기가 좋다.) 저장소url을 복사한다
+<pre><code>git remote add origin 저장소url
+git add .
+git commit -m "Initialize blog"
+git push origin gh-pages  // 반드시 gh-pages 브랜치로 푸시해야 깃허브가 블로그 페이지를 만들어 준다.
+</code></pre>
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
