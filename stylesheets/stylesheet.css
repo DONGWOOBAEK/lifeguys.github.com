@@ -772,13 +772,13 @@ footer a:hover {
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .inner {
-    width: 740px;
+    width: 900px;
   }
   header h1, header h2 {
-    width: 740px;
+    width: 900px;
   }
   header h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
   header h2 {
     font-size: 30px;
@@ -846,7 +846,7 @@ footer a:hover {
   }
   aside#sidebar {
     background-image: none;
-    margin-top: 20px;
+    margin-top: 17px;
     border-top: solid 1px #ddd;
     padding: 20px 0;
     min-height: 0;
