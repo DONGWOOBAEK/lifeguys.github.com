@@ -65,15 +65,14 @@ jekyll server
 <pre>깜짝 퀴즈!
 </pre>
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>2.Github 가입 및 Repository 생성</h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>3.Github 가입 및 Repository 생성</h3>
  Step 1: 설치
  <p>맥 OS X에는 루비가 이미 설치되어 있으므로 터미널에서 <code>ruby -v</code>를 입력하여 루비 버전을 체크한 후 다음 명령으로 지킬을 설치한다. </p>
  <pre><code>sudo gem install jekyll</code></pre>
  [sudo]가 필요한 경우엔 []없이 sudo gem install jekyll을 입력한다. 만약, RubyGems 버전과 관련한 에러가 나면 sudo gem update --system으로 업데이트한 후 설치하면 대부분 해결할 수 있다.
  <br>
  이제 로컬 디렉토리에 지킬을 설치하고 온라인 깃허브에 자신의 블로그를 올릴 차례이다. 이 블로그 주소와 같이 nolboo.github.io 계정주소로 생성하는 경우와 nolboo.github.io/blog처럼 프로젝트 페이지 주소로 생성하는 경우가 있다. 전자의 경우가 훨씬 사용하기 쉽다.
- <br>
-<p> Step 2: 계정 주소 페이지
+ <p>Step 2: 계정 주소 페이지</p>
  <pre><code>jekyll new 깃허브사용자명.github.com // 깃허브사용자명.github.com 
  디렉토리를 만들어 기본 디렉토리와 화일을 생성한다.</code></pre>
  깃허브사용자명.github.com으로 만들면 별도의 비용없이도 자신의 블로그 주소를 가질 수 있다. 자신의 경우에 맞게 깃허브사용명을 입력한다.
@@ -104,14 +103,33 @@ git commit -m "Initialize blog"
 git push origin gh-pages  // 반드시 gh-pages 브랜치로 푸시해야 깃허브가 블로그 페이지를 만들어 준다.
 </code></pre>
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>4.계정주소 페이지 만들기</h3>
+Step 1: 프로젝트 폴더 생성
+<pre><code>jekyll new 폴더이름
+cd 폴더이름
+jekyll server --watch
+</code></pre>
+이후 로컬에서 자신이 만든 블로그를 확인 할 수 있습니다.
+<pre><code>localhost:4000</code></pre>
+Step 2: 자신의 깃허브를 통해 웹상으로 이동
+<P>
+git을 설치 한 뒤, git을 초기화 한다. 
+<pre><code>sudo apt-get install git
+git init
+</code></pre>
+현재 생성한 폴더에 내용을 원격 저장소에 저장하기 위해서 저장소의 주소를 git에 추가한다.
+<pre><code>git remote add origin 저장소 주소</code></pre>
+저장소 주소는 생성된 저장소로 들어가면 확인 할 수 있다.
+<p>
+다음으로는 로컬에서 만든 블로그를 github Repository에 추가하기 위한 준비작업을 한다.
+</p>
+<pre><code>git add .
+git commit -m "부가 설명을 위한tag"
+</code></pre>
+여기서 -m은 커밋할 때 어떤 내용인지 메시지를 입력하는 옵션이다.
+<p>로컬에서 만든 저장소에 추가</p>
+<pre><code>git push origin master</code></pre>
+아이디와 비밀번호를 차례로 입력 후 완료.
         </section>
 
         <aside id="sidebar">
@@ -124,7 +142,13 @@ git push origin gh-pages  // 반드시 gh-pages 브랜치로 푸시해야 깃허
           
         </aside>
       </div>
+ <input type="radio" name="evaluation" checked="checked">매우 만족
+ <input type="radio" name="evaluation">만 족
+ <input type="radio" name="evaluation">보 통
+ <input type="radio" name="evaluation">불 만족
+ <input type="radio" name="evaluation">매우 불만족
  
+ <textarea rows="300px" cols="200px">평가</textarea><button>평가완료</button>
     </div>
   </body>
 </html>
